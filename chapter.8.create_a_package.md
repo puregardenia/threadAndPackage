@@ -174,8 +174,8 @@ Node.js在调用某个包时，会首先检查包中的`package.json`文件的`m
     node-gyp -v
     v0.9.5
 
-##创建binding.byp
-`binding.byp`文件使用`json`格式字符串，它描述了如何配制一个准备构建的插件。这个文件需要放置在你的包的根目录下，类似`package.json`文件。一个简单`binding.byp`文件示例：
+##创建binding.gyp
+`binding.gyp`文件使用`json`格式字符串，它描述了如何配制一个准备构建的插件。这个文件需要放置在你的包的根目录下，类似`package.json`文件。一个简单`binding.gyp`文件示例：
 
     {
       "targets": [
@@ -186,7 +186,7 @@ Node.js在调用某个包时，会首先检查包中的`package.json`文件的`m
       ]
     }
 
-`targets`表示输出的插件数组，数组中如果有多项将会输出多个插件；`target_name`表示输出插件的文件名，这个文件名将可以直接通过Node.js的`requrie`引用；`sources`表示待编译的原文件路径。`binding.byp`还有很多选项，比如`cc_flag`、`libraries`等，详情请参阅：[https://github.com/TooTallNate/node-gyp](https://github.com/TooTallNate/node-gyp)。
+`targets`表示输出的插件数组，数组中如果有多项将会输出多个插件；`target_name`表示输出插件的文件名，这个文件名将可以直接通过Node.js的`requrie`引用；`sources`表示待编译的原文件路径。`binding.gyp`还有很多选项，比如`cc_flag`、`libraries`等，详情请参阅：[https://github.com/TooTallNate/node-gyp](https://github.com/TooTallNate/node-gyp)。
 
 ##C++插件包开发
 本节将从构建一个简单的`hello world`插件开始，完善我们之前的`libuv_thread`包的C++代码部分，让大家熟悉整个Node.js的C++插件开发流程。
